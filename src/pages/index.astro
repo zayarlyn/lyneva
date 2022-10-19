@@ -1,21 +1,21 @@
 ---
-import "tippy.js/dist/tippy.css";
-import "tippy.js/themes/light.css";
-import MainHead from "../components/MainHead.astro";
-import H from "../components/H.astro";
-import Sw from "../components/Sw.astro";
-import Me from "../components/Me.astro";
-import F from "../components/F.astro";
-import Wc from "../components/Wc.astro";
+import 'tippy.js/dist/tippy.css';
+import 'tippy.js/themes/light.css';
+import MainHead from '../components/MainHead.astro';
+import H from '../components/H.astro';
+import Sw from '../components/Sw.astro';
+import Me from '../components/Me.astro';
+import F from '../components/F.astro';
+import Wc from '../components/Wc.astro';
 ---
 
-<html lang="en">
+<html lang='en'>
   <head>
-    <MainHead title="Astro" description="Illumi Lyne: Developer ..." />
+    <MainHead title='Astro' description='Illumi Lyne: Developer ...' />
   </head>
-  <body class="bg-primary">
+  <body class='bg-primary'>
     <H />
-    <div id="scroll-wrapper" class="overflow-hidden w-screen h-screen">
+    <div id='scroll-wrapper' class='overflow-hidden w-screen h-screen'>
       <main>
         <Wc />
         <Sw />
@@ -23,134 +23,118 @@ import Wc from "../components/Wc.astro";
       </main>
       <F />
     </div>
-    <div
-      id="splash"
-      class="z-10 fixed origin-bottom w-full h-full bg-green-400 top-0 right-0"
-    >
+    <div id='splash' class='z-10 fixed origin-bottom w-full h-full bg-green-400 top-0 right-0'>
       <script>
         // splash screen
-        import anime from "animejs";
+        import anime from 'animejs';
         anime({
-          targets: "#hi",
+          targets: '#hi',
           keyframes: [
             {
               translateY: 0,
-              fontSize: 18,
               duration: 800,
             },
             {
-              color: "#4ade80",
+              color: '#4ade80',
               delay: 500,
             },
           ],
-          easing: "easeInOutExpo",
+          easing: 'easeInOutExpo',
         });
 
         anime({
-          targets: "#zl",
+          targets: '#zl',
           keyframes: [
             {
               opacity: 1,
-              letterSpacing: "2px",
+              translateY: 0,
               duration: 1000,
             },
             {
-              color: "#fff",
+              color: '#fff',
               delay: 400,
             },
           ],
-          easing: "easeInOutExpo",
+          easing: 'easeInOutExpo',
         });
 
         anime({
-          targets: "#splash",
+          targets: '#splash',
           scaleY: 0,
           duration: 1200,
-          easing: "easeInOutExpo",
+          easing: 'easeInOutExpo',
           delay: 1000,
         });
 
         anime({
-          targets: "#title",
+          targets: '#title',
           translateY: 0,
           opacity: 1,
           duration: 400,
-          easing: "easeInOutQuad",
-          delay: 1500,
+          easing: 'easeInOutQuad',
+          delay: 1800,
         });
 
         // smooth scrolling
-        import Scrollbar from "smooth-scrollbar";
-        import OverscrollPlugin from "smooth-scrollbar/plugins/overscroll";
+        import Scrollbar from 'smooth-scrollbar';
+        import OverscrollPlugin from 'smooth-scrollbar/plugins/overscroll';
 
         Scrollbar.use(OverscrollPlugin);
-        const scroll = Scrollbar.init(
-          document.getElementById("scroll-wrapper") as HTMLElement,
-          {
-            plugins: { overscroll: { damping: 0.15, maxOverscroll: 200 } },
-          }
-        );
+        const scroll = Scrollbar.init(document.getElementById('scroll-wrapper') as HTMLElement, {
+          plugins: { overscroll: { damping: 0.15, maxOverscroll: 200 } },
+        });
         //  custom scrollbar
         Scrollbar.detachStyle();
 
-        const track = document.querySelector(
-          ".scrollbar-track-y"
-        ) as HTMLElement;
-        track.style.cssText =
-          "position: absolute; right: 0; top: 0; width: 6px; height: 100%";
-        const thumb = document.querySelector(
-          ".scrollbar-thumb-y"
-        ) as HTMLElement;
+        const track = document.querySelector('.scrollbar-track-y') as HTMLElement;
+        track.style.cssText = 'position: absolute; right: 0; top: 0; width: 6px; height: 100%';
+        const thumb = document.querySelector('.scrollbar-thumb-y') as HTMLElement;
         thumb.style.cssText =
-          "background-color: #393f61; border-radius: 10px; opacity: 0; transition: opacity 200ms";
+          'background-color: #393f61; border-radius: 10px; opacity: 0; transition: opacity 200ms';
 
         let timeout: ReturnType<typeof setTimeout>;
         scroll.addListener(() => {
-          thumb.style.opacity = "1";
+          thumb.style.opacity = '1';
           clearTimeout(timeout);
           timeout = setTimeout(() => {
-            thumb.style.opacity = "0";
+            thumb.style.opacity = '0';
           }, 2000);
         });
 
         // nami (I mean navigation)
-        const navs = document.querySelectorAll(".nav");
-        const ele = document.querySelectorAll(".sitw");
-        const mouse = document.getElementById("mouse") as HTMLElement;
+        const navs = document.querySelectorAll('.nav');
+        const ele = document.querySelectorAll('.sitw');
+        const mouse = document.getElementById('mouse') as HTMLElement;
 
         navs.forEach((nav, i) =>
-          nav.addEventListener("click", () =>
-            scroll.scrollIntoView(ele[i] as HTMLElement)
-          )
+          nav.addEventListener('click', () => scroll.scrollIntoView(ele[i] as HTMLElement))
         );
-        mouse.addEventListener("click", () =>
-          scroll.scrollIntoView(ele[1] as HTMLElement)
-        );
+        mouse.addEventListener('click', () => scroll.scrollIntoView(ele[1] as HTMLElement));
 
         // tippy
-        import tippy from "tippy.js";
+        import tippy from 'tippy.js';
 
-        tippy("[data-tippy-content]", {
-          animation: "shift-away-extreme",
-          theme: "light",
+        tippy('[data-tippy-content]', {
+          animation: 'shift-away-extreme',
+          theme: 'light',
           allowHTML: true,
           touch: true,
         });
 
         // dynamic tooltip for email
-        const emailInstance = tippy("#email", {
-          content: "Copy",
-          theme: "light",
+        const emailInstance = tippy('#email', {
+          content: 'Copy',
+          theme: 'light',
           hideOnClick: false,
           touch: true,
-          onHidden: (e) => e.setContent("Copy"),
+          onHidden: (e) => e.setContent('Copy'),
         })[0];
 
         // copy email
-        const copyEmail = document.getElementById("email") as HTMLElement;
-        copyEmail.addEventListener("click", () => {
-          navigator.clipboard.writeText("zayar.lynn.dev@gmail.com");
-          emailInstance.setContent("Copied!! 😁");
+        const copyEmail = document.getElementById('email') as HTMLElement;
+        copyEmail.addEventListener('click', () => {
+          navigator.clipboard.writeText('zayar.lynn.dev@gmail.com');
+          emailInstance.setContent('Copied!! 😁');
         });
       </script>
     </div>

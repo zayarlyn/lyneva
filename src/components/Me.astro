@@ -1,48 +1,33 @@
 ---
-import { focus, familiar } from "../utils";
+import { focus, familiar } from '../utils';
 ---
 
 <section
-  class="clear-both mt-[20rem] sitw pt-32 2k:pt-40 4k:pt-60 text-white font-poppins w-10/12 mx-auto text-center mb-32"
+  class='clear-both sm:mt-[20rem] sitw pt-32 2k:pt-40 4k:pt-60 text-white font-poppins w-10/12 mx-auto text-center mb-32'
 >
-  <h2 class="font-semibold text-2xl 2k:text-3xl 4k:text-5xl">Who am I ?</h2>
+  <h2 class='font-semibold text-2xl 2k:text-3xl 4k:text-5xl'>Who am I ?</h2>
   <p
-    class="tracking-wide text-lg leading-7 mt-7 4k:mt-12 2k:text-xl 4k:text-3xl max-w-[57rem] 2k:leading-9 2k:max-w-[63rem] 4k:max-w-[95rem] 4k:leading-[3.2rem] mx-auto"
+    class='tracking-wide leading-7 mt-7 4k:mt-12 2k:text-xl 4k:text-3xl max-w-[57rem] 2k:leading-9 2k:max-w-[63rem] 4k:max-w-[95rem] 4k:leading-[3.2rem] mx-auto'
   >
-    I am a self-driven web developer with over one year experience in frontend
-    development. I love developing user-centric web applications that solve my
-    needs and real-life challenges. Currently learning server-side technologies
-    like nodejs and databases.
+    I am a self-driven web developer with over one year experience in frontend development. I love
+    developing user-centric web applications that solve my needs and real-life challenges. Currently
+    learning server-side technologies like nodejs and databases.
   </p>
-  <h3 class="text-xl mt-16 2k:text-2xl 4k:text-4xl 4k:mt-24">
-    I mainly focus on
-  </h3>
-  <div
-    class="flex flex-wrap justify-center mt-6 gap-8 2k:gap-12 4k:mt-12 mx-auto 4k:gap-16"
-  >
+  <h3 class='text-xl mt-16 2k:text-2xl 4k:text-4xl 4k:mt-24'>I mainly focus on</h3>
+  <div class='flex flex-wrap justify-center mt-6 gap-8 2k:gap-12 4k:mt-12 mx-auto 4k:gap-16'>
     {
       focus.map(({ src, tooltip }) => (
-        <img
-          src={src}
-          data-tippy-content={tooltip}
-          class="h-10 2k:h-12 4k:h-20"
-        />
+        <img src={src} data-tippy-content={tooltip} class='2k:h-12 4k:h-20 h-10' />
       ))
     }
   </div>
-  <h3 class="text-xl mt-16 2k:mt-22 2k:text-2xl 4k:text-4xl 4k:mt-24">
+  <h3 class='text-xl mt-16 2k:mt-22 2k:text-2xl 4k:text-4xl 4k:mt-24'>
     I am familiar working with
   </h3>
-  <div
-    class="flex justify-center flex-wrap mt-6 gap-8 4k:mt-16 mx-auto 2k:gap-12 4k:gap-16"
-  >
+  <div class='flex justify-center flex-wrap mt-6 gap-8 4k:mt-16 mx-auto 2k:gap-12 4k:gap-16'>
     {
       familiar.map(({ src, tooltip }) => (
-        <img
-          src={src}
-          data-tippy-content={tooltip}
-          class="h-10 2k:h-12 4k:h-20"
-        />
+        <img src={src} data-tippy-content={tooltip} class='2k:h-12 4k:h-20 h-10' />
       ))
     }
   </div>
