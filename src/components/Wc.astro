@@ -1,0 +1,62 @@
+<!-- class='block font-rubik tracking-wide' -->
+<section
+  class="sitw relative flex flex-col justify-center items-center h-screen"
+>
+  <div
+    id="hi-ctr"
+    class="z-20 static overflow-hidden text-sm sm:text-base 2k:text-2xl 4k:text-3xl"
+  >
+    <span
+      style="display: block; transform: translateY(100%); font-size: 27px;"
+      id="hi"
+    >
+      Hi, I am
+    </span>
+  </div>
+  <h1
+    id="zl"
+    style="letter-spacing: 16px; opacity: 0"
+    class="mt-2 2k:mt-6 text-black z-20 text-5xl sm:text-8xl font-semibold opacity-1 font-poppins 2k:text-[8.5rem] 4k:text-[14rem]"
+  >
+    ZAYAR LYNN
+  </h1>
+  <h2
+    class="text-white text-sm sm:text-lg gap-2 mt-8 2k:mt-10 4k:mt-14 flex font-rubik tracking-wider 2k:text-[1.75rem] 4k:text-[2.5rem]"
+  >
+    <span
+      id="title"
+      style="transform: translateY(150%); display: block; opacity: 0;"
+    >
+      WEB DEVELOPER BASED IN MYANMAR
+    </span>
+  </h2>
+  <button
+    id="mouse"
+    class="group absolute bottom-[20vh] w-4 lg:w-6 2k:w-9 4k:w-10"
+  >
+    <svg viewBox="0 0 23 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect
+        class="stroke-white group-hover:stroke-green-400"
+        x="1"
+        y="1"
+        width="20.5641"
+        height="38"
+        rx="10.2821"
+        stroke-width="2"></rect>
+      <rect id="ms" x="10" y="10" width="2" height="5" rx="1" fill="white"
+      ></rect>
+    </svg>
+  </button>
+</section>
+<script>
+  import anime from "animejs";
+
+  anime({
+    targets: "#ms",
+    duration: 1000,
+    easing: "linear",
+    keyframes: [{ translateY: 18 }, { translateY: 0 }],
+    loop: true,
+    delay: 300,
+  });
+</script>
