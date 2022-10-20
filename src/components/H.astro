@@ -17,19 +17,18 @@ const navs = ['Projects', 'About', 'Contact'];
           fill='white'></path>
       </svg>
     </button>
-    <!-- <nav class='group peer h-5'> -->
     <button class='peer group sm:hidden focus:w-0 focus:h-0'>
       <img src='/assets/menu.svg' alt='open navigation' />
     </button>
     <nav
-      class='text-2xl sm:text-base 2k:text-xl 4k:text-3xl delay-75 fixed sm:bg-transparent duration-300 peer-focus:translate-x-0 sm:translate-x-0 sm:static sm:w-auto sm:h-auto sm:pt-0 -translate-x-full text-center pt-32 backdrop-blur-md top-0 -z-10 sm:z-auto left-0 bg-black h-screen w-full sm:flex font-poppins gap-8 2k:gap-12 tracking-wider'
+      class='text-2xl sm:text-base 2k:text-xl 4k:text-3xl delay-75 fixed sm:bg-transparent duration-300 peer-focus:translate-x-0 sm:translate-x-0 sm:static sm:w-auto sm:h-auto sm:pt-0 -translate-x-full text-center pt-32 backdrop-blur-md top-0 -z-10 sm:z-auto left-0 bg-black h-screen w-full sm:flex font-poppins gap-10 2k:gap-14 4K:gap-18'
     >
       {
         navs.map((nav) => (
           <button
             role='button'
             aria-label={'view' + nav}
-            class='nav block w-full cursor-pointer px-12 py-6 hover:text-green-400 focus:text-green-500 sm:p-0'
+            class='nav block w-full cursor-pointer px-12 py-6 tracking-wider hover:text-green-400 focus:text-green-500 sm:p-0'
           >
             {nav}
           </button>

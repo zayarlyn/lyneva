@@ -1,12 +1,12 @@
 ---
-import 'tippy.js/dist/tippy.css';
-import 'tippy.js/themes/light.css';
 import MainHead from '../components/MainHead.astro';
 import H from '../components/H.astro';
 import Sw from '../components/Sw.astro';
 import Me from '../components/Me.astro';
 import F from '../components/F.astro';
 import Wc from '../components/Wc.astro';
+import 'tippy.js/dist/tippy.css';
+import 'tippy.js/themes/light.css';
 ---
 
 <html lang='en'>
@@ -29,7 +29,7 @@ import Wc from '../components/Wc.astro';
         import anime from 'animejs';
 
         anime
-          .timeline({ loop: false })
+          .timeline()
           .add({ targets: '#hi', scale: 2, duration: 800, delay: 200 })
           .add({
             targets: '.zl-char',
@@ -40,7 +40,6 @@ import Wc from '../components/Wc.astro';
             delay: (el, i) => 30 * i,
           })
           .add({
-            loop: false,
             targets: '#hi',
             scale: 1,
             color: '#4ade80',
@@ -54,7 +53,6 @@ import Wc from '../components/Wc.astro';
           duration: 1400,
           easing: 'easeInOutExpo',
           delay: 1700,
-          loop: false,
         });
         anime({ targets: '#zl', color: '#fff', zIndex: 0, duration: 100, delay: 2400 });
 
@@ -88,9 +86,7 @@ import Wc from '../components/Wc.astro';
         scroll.addListener(() => {
           thumb.style.opacity = '1';
           clearTimeout(timeout);
-          timeout = setTimeout(() => {
-            thumb.style.opacity = '0';
-          }, 2000);
+          timeout = setTimeout(() => (thumb.style.opacity = '0'), 2000);
         });
 
         // nami (I mean navigation)
