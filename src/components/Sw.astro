@@ -1,39 +1,31 @@
 ---
-import Pj from "./Pj.astro";
-import { projects } from "../utils";
+import Pj from './Pj.astro';
+import { projects } from '../utils';
 
-const jira = [
-  "Express",
-  "MySQL",
-  "Prisma",
-  "Typescript",
-  "React",
-  "Redux Toolkit",
-  "Tailwind",
-];
-const ytr = ["NextJS", "Typescript", "Firestore", "Firebase Auth", "ChakraUI"];
-const quizu = ["Javascript", "Trivia API", "DOM", "CSS", "ChakraUI"];
+const jira = ['Express', 'MySQL', 'Prisma', 'Typescript', 'React', 'Redux Toolkit', 'Tailwind'];
+const ytr = ['NextJS', 'Typescript', 'Firestore', 'Firebase Auth', 'ChakraUI'];
+const quizu = ['Javascript', 'Trivia API', 'DOM', 'CSS', 'ChakraUI'];
 ---
 
 <section
-  id="sw"
-  class="sitw w-10/12 max-w-[40rem] lg:max-w-[80rem] 2k:max-w-[100rem] 4k:max-w-[120rem] mx-auto pt-14"
+  id='sw'
+  class='sitw w-11/12 max-w-[40rem] lg:max-w-[80rem] 2k:max-w-[100rem] 4k:max-w-[120rem] mx-auto pt-14'
 >
   <h2
-    class="text-gray-200 text-center tracking-wide font-rubik text-xl md:text-3xl 2k:text-4xl 4k:text-5xl mb-14 2k:mb-20 4k:mb-28"
+    class='text-gray-200 text-center tracking-wide font-rubik text-xl md:text-3xl 2k:text-4xl 4k:text-5xl mb-14 2k:mb-20 4k:mb-28'
   >
     Featured projects
   </h2>
-  <div class="tablet:gap-6 lg:block">
+  <div class='tablet:gap-6 lg:block'>
     {projects.map((props, i) => <Pj {...props} idx={i} />)}
   </div>
 </section>
 <script>
-  import anime from "animejs";
-  import Scrollbar from "smooth-scrollbar";
-  import { getScreenY } from "../utils";
+  import anime from 'animejs';
+  import Scrollbar from 'smooth-scrollbar';
+  import { getScreenY } from '../utils';
 
-  const targets = ["#pj-1", "#pj-2", "#pj-3", "#pj-4"];
+  const targets = ['#pj-1', '#pj-2', '#pj-3', '#pj-4'];
 
   // create animation timeline
   const tl = anime.timeline();
@@ -44,7 +36,7 @@ const quizu = ["Javascript", "Trivia API", "DOM", "CSS", "ChakraUI"];
       translateY: 0,
       opacity: 1,
       duration: 1000,
-      easing: "easeInOutQuad",
+      easing: 'easeInOutQuad',
       autoplay: false,
     })
   );
@@ -54,7 +46,7 @@ const quizu = ["Javascript", "Trivia API", "DOM", "CSS", "ChakraUI"];
 
   // animate timeline on scroll
   const scroll = Scrollbar.get(
-    document.getElementById("scroll-wrapper") as HTMLElement
+    document.getElementById('scroll-wrapper') as HTMLElement
   ) as Scrollbar;
-  scroll.addListener(() => tl.seek((getScreenY("sw") - 0.15) * tl.duration));
+  scroll.addListener(() => tl.seek((getScreenY('sw') - 0.15) * tl.duration));
 </script>

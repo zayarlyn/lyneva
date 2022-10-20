@@ -3,7 +3,7 @@ import { focus, familiar } from '../utils';
 ---
 
 <section
-  class='clear-both sm:mt-[20rem] sitw pt-32 2k:pt-40 4k:pt-60 text-white font-poppins w-10/12 mx-auto text-center mb-32'
+  class='clear-both sm:mt-[20rem] sitw pt-32 2k:pt-40 4k:pt-60 text-white font-poppins w-11/12 mx-auto text-center mb-32'
 >
   <h2 class='font-semibold text-2xl 2k:text-3xl 4k:text-5xl'>Who am I ?</h2>
   <p
@@ -16,8 +16,13 @@ import { focus, familiar } from '../utils';
   <h3 class='text-xl mt-16 2k:text-2xl 4k:text-4xl 4k:mt-24'>I mainly focus on</h3>
   <div class='flex flex-wrap justify-center mt-6 gap-8 2k:gap-12 4k:mt-12 mx-auto 4k:gap-16'>
     {
-      focus.map(({ src, tooltip }) => (
-        <img src={src} data-tippy-content={tooltip} class='2k:h-12 4k:h-20 h-10' />
+      focus.map(({ src, title, tooltip }) => (
+        <img
+          src={src}
+          alt={title}
+          data-tippy-content={`<b>${title}:</b> ${tooltip}`}
+          class='2k:h-12 4k:h-20 h-10'
+        />
       ))
     }
   </div>
@@ -26,8 +31,13 @@ import { focus, familiar } from '../utils';
   </h3>
   <div class='flex justify-center flex-wrap mt-6 gap-8 4k:mt-16 mx-auto 2k:gap-12 4k:gap-16'>
     {
-      familiar.map(({ src, tooltip }) => (
-        <img src={src} data-tippy-content={tooltip} class='2k:h-12 4k:h-20 h-10' />
+      familiar.map(({ src, title, tooltip }) => (
+        <img
+          src={src}
+          alt={title}
+          data-tippy-content={`<b>${title}:</b> ${tooltip}`}
+          class='2k:h-12 4k:h-20 h-10'
+        />
       ))
     }
   </div>

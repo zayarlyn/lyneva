@@ -27,52 +27,44 @@ import Wc from '../components/Wc.astro';
       <script>
         // splash screen
         import anime from 'animejs';
-        anime({
-          targets: '#hi',
-          keyframes: [
-            {
-              translateY: 0,
-              duration: 800,
-            },
-            {
-              color: '#4ade80',
-              delay: 500,
-            },
-          ],
-          easing: 'easeInOutExpo',
-        });
 
-        anime({
-          targets: '#zl',
-          keyframes: [
-            {
-              opacity: 1,
-              translateY: 0,
-              duration: 1000,
-            },
-            {
-              color: '#fff',
-              delay: 400,
-            },
-          ],
-          easing: 'easeInOutExpo',
-        });
+        anime
+          .timeline({ loop: false })
+          .add({ targets: '#hi', scale: 2, duration: 800, delay: 200 })
+          .add({
+            targets: '.zl-char',
+            translateY: ['150%', 0],
+            opacity: [0, 1],
+            easing: 'easeOutExpo',
+            duration: 900,
+            delay: (el, i) => 30 * i,
+          })
+          .add({
+            loop: false,
+            targets: '#hi',
+            scale: 1,
+            color: '#4ade80',
+            zIndex: 0,
+            duration: 500,
+          });
 
         anime({
           targets: '#splash',
           scaleY: 0,
-          duration: 1200,
+          duration: 1400,
           easing: 'easeInOutExpo',
-          delay: 1000,
+          delay: 1700,
+          loop: false,
         });
+        anime({ targets: '#zl', color: '#fff', zIndex: 0, duration: 100, delay: 2400 });
 
         anime({
           targets: '#title',
-          translateY: 0,
-          opacity: 1,
-          duration: 400,
+          translateY: ['150%', 0],
+          opacity: [0, 1],
+          duration: 300,
           easing: 'easeInOutQuad',
-          delay: 1800,
+          delay: 2400,
         });
 
         // smooth scrolling
