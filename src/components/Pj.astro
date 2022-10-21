@@ -2,12 +2,15 @@
 interface Props {
   title: string;
   descr: string;
-  img: string;
-  uri: string;
+  img_sd: string;
+  img_hd: string;
+  img_2k: string;
   idx: number;
+  uri: string;
+  source: string;
 }
 
-const { title, descr, img, idx, uri } = Astro.props;
+const { title, descr, idx, uri, source, img_sd, img_hd, img_2k } = Astro.props;
 ---
 
 <div
@@ -20,20 +23,29 @@ const { title, descr, img, idx, uri } = Astro.props;
   }`}
 >
   <div class='group relative overflow-hidden cursor-pointer'>
-    <img class='hover:scale-105 duration-300 ease-in-out' src={img} alt={title} />
+    <picture class='scale-0'>
+      <source media='(max-width: 999px)' srcset={img_sd} />
+      <source media='(max-width: 1999px)' srcset={img_hd} />
+      <source media='(min-width: 2000px)' srcset={img_2k} />
+      <img class='duration-300 group-hover:scale-105 ease-out' src={img_hd} alt={title} />
+    </picture>
     <a
       href={uri}
       target='_blank'
-      class='font-rubik hover:underline underline-offset-2 text-white duration-300 backdrop-blur-md flex items-center gap-3 absolute group-hover:bottom-0 -bottom-full py-4 w-full justify-end pr-6'
-      >View project<img src='/assets/r-arrow.svg' alt='learn more' />
+      class='font-rubik px-4 -bottom-full sm:px-8 hover:text-green-400 text-white duration-300 backdrop-blur-md md:text-xl text-center absolute group-hover:bottom-0 py-4 w-full'
+    >
+      View project <img class='h-4 sm:h-5 inline ml-3' src='/assets/link.svg' alt='learn more' />
     </a>
   </div>
-  <h3
-    class='font-poppins text-white text-xl sm:text-2xl font-medium mb-2 sm:mb-3 px-8 mt-4 sm:mt-6'
-  >
-    {title}
-  </h3>
-  <p class='px-8 text-slate-200 font-rubik mb-4 sm:mb-6 sm:text-xl'>
+  <div class='flex justify-between items-center mb-2 sm:mb-3 px-4 sm:px-8 mt-4 sm:mt-6'>
+    <h3 class='font-poppins text-white text-xl sm:text-2xl font-medium'>
+      {title}
+    </h3>
+    <a href={source} target='blank' class='hover:rotate-[360deg] duration-300'>
+      <img class='h-5 sm:h-6' src='/assets/github.svg' alt='source code' />
+    </a>
+  </div>
+  <p class='px-4 sm:px-8 text-slate-200 font-rubik mb-4 sm:mb-6 sm:text-xl'>
     {descr}
   </p>
 </div>

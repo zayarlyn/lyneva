@@ -1,22 +1,25 @@
 ---
-const { title = 'Zayar Lynn', description = "Zayar Lynn's personal site" } = Astro.props;
+const { title = 'Zayar Lynn - Web developer' } = Astro.props;
 ---
 
 <meta charset='UTF-8' />
-<meta name='description' property='og:description' content={description} />
+<meta
+  name='description'
+  property='og:description'
+  content='Web developer & programmer with latent potential'
+/>
 <meta name='viewport' content='width=device-width' />
 <meta name='generator' content={Astro.generator} />
+<meta property='og:site_name' content='Zayar Lynn' />
+<meta name='author' content='Zayar Lynn' />
+<meta name='copyright' content='Zayar Lynn' />
+<meta name='keywords' content='portfolio, web development, lyneva, astro' />
+<meta property='og:title' content={title} />
 <title>{title}</title>
 
 <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
 <link rel='preconnect' href='https://fonts.googleapis.com' />
 <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
-<link
-  href='https://fonts.googleapis.com/css?family=Poppins:100,200,300,regular,500,600,700,800,900'
-  rel='stylesheet'
-/>
-<link
-  href='https://fonts.googleapis.com/css?family=Rubik:300,regular,500,600,700,800,900'
-  rel='stylesheet'
-/>
+<link href='https://fonts.googleapis.com/css?family=Poppins:regular,500,600' rel='stylesheet' />
+<link href='https://fonts.googleapis.com/css?family=Rubik:regular,500,600' rel='stylesheet' />
 <link rel='stylesheet' href='https://unpkg.com/tippy.js@6/animations/shift-away-extreme.css' />
