@@ -103,6 +103,11 @@ export const familiar = [
     tooltip: 'General-purpose programming language',
   },
   {
+    src: '/assets/astro.svg',
+    title: 'Astro',
+    tooltip: 'Static framework with Island Architecture',
+  },
+  {
     src: '/assets/redux.svg',
     title: 'Redux.js',
     tooltip: 'predictable state management container',
