@@ -1,0 +1,47 @@
+---
+const assets = [
+  '/assets/grass-0.svg',
+  '/assets/grass-1.svg',
+  '/assets/grass-2.svg',
+  '/assets/grass-3.svg',
+];
+---
+
+<section
+  class='text-white pt-20 2k:pt-28 4k:pt-48 mb-36 text-center font-poppins 4k:max-w-[95rem] 2k:max-w-[63rem] max-w-[40rem] md:max-w-[50rem] w-11/12 mx-auto'
+>
+  <h2 class='font-medium text-2xl 2k:text-3xl 4k:text-5xl'>Hold up, Traveller!</h2>
+  <h3 class='sm:text-lg 2k:text-xl 4k:text-3xl mt-4 md:mt-6 2k:mt-8 4k:mt-10'>
+    You have surfed the internet quite a while, rest here and <a
+      class='underline'
+      href='https://knowyourmeme.com/memes/touch-grass'
+      target='_blank'>Touch some grass.</a
+    >
+  </h3>
+  <div
+    id='grass'
+    class='relative grid place-items-center mt-20 h-24 w-52 mx-auto cursor-pointer'
+    data-tippy-content='Touch here!'
+  >
+    {
+      assets.map((src) => (
+        <img class='grass absolute opacity-0 duration-500' src={src} alt='grass' />
+      ))
+    }
+  </div>
+</section>
+
+<script>
+  const assets = document.querySelectorAll('.grass') as NodeListOf<HTMLImageElement>;
+  const grass = document.getElementById('grass') as HTMLDivElement;
+
+  let c = 0;
+  setInterval(() => {
+    assets.forEach((node, i) => (node.style.opacity = i === c ? '1' : '0'));
+    c = c === 3 ? 0 : c + 1;
+  }, 500);
+
+  grass.addEventListener('click', () =>
+    window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank')
+  );
+</script>

@@ -98,6 +98,11 @@ export const focus = [
 ];
 export const familiar = [
   {
+    src: '/assets/docker.svg',
+    title: 'Docker',
+    tooltip: 'open platform for developing, shipping, and running applications',
+  },
+  {
     src: '/assets/python.svg',
     title: 'Python',
     tooltip: 'General-purpose programming language',
